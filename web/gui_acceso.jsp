@@ -1,121 +1,72 @@
 <%@page contentType="text/html; charset=iso-8859-1"
 session="true" language="java" import="java.util.*" %>
 
-<html >
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
- <link href="graficos/printer.png" rel="shortcut icon">
- <title>Acceso al Sistema Web</title>
- 
-<style>
-
-body {font-family: Arial, Helvetica, sans-serif, background-color}
-form {border: 3px solid #f1f1f1;}
-
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  width: 30%;
-}
-
-error{
-  color: red;
-  }
-
-button:hover {
-  opacity: 0.8;
-}
-
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
-
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-}
-
-img.avatar {
-  width: 40%;
-  border-radius: 30%;
-}
-
-.container {
-  padding: 16px;
-}
-
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
-  }
-}
-.container,.container-fluid {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-@media (min-width: 650px) {
-  .container {
-    width: 600px;
-  }
-}
-
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Acceso al Sistema Web</title>
+  <link rel="shortcut icon" href="graficos/printer.png">
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #cde9d4, #a0d1b4);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card {
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+    .avatar {
+      width: 120px;
+      border-radius: 50%;
+    }
+  </style>
 </head>
-<body style="background-color: darkseagreen">
-<div class="container">
-<center><h2>Playa De Auto 2.0</h2>
+<body>
 
-<form action="sql_acceso.jsp"  method="post"  class="container-fluid" > 
-  <div class="imgcontainer"> 
-      <img src="graficos/auto-splassh-unscreen.gif" alt="Avatar" class="avatar">
-  </div>
- 
-     <font color="red">
-     <td align="center" style="color: red" colspan="2">
-        <%=request.getParameter("error") != null ? request.getParameter("error") : ""%> </td> <br><br> <br> 
-      
-     </font>
-      
-    <label for="usuario"><b>Usuario</b></label>
-    <input type="text" placeholder="Ingrese Usuario" name="usuario" required>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-5">
+        <div class="card p-4">
+          <div class="text-center">
+            <img src="graficos/auto-splassh-unscreen.gif" alt="Logo" class="avatar mb-3">
+            <h3 class="mb-4">Playa De Auto 2.0</h3>
+          </div>
 
-    <label for="clave"><b>Contraseña</b></label>
-    <input  type="password" placeholder="Ingrese Contraseña" name="clave" required>
-        
-    <button type="submit" value="Ingresar">Ingresar</button>
-  
-</form></center>
+          <form action="sql_acceso.jsp" method="post">
+            <div class="mb-3 text-danger text-center">
+              <%=request.getParameter("error") != null ? request.getParameter("error") : ""%>
+            </div>
+
+            <div class="mb-3">
+              <label for="usuario" class="form-label"><b>Usuario</b></label>
+              <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Ingrese Usuario" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="clave" class="form-label"><b>Contraseña</b></label>
+              <input type="password" class="form-control" id="clave" name="clave" placeholder="Ingrese Contraseña" required>
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn btn-success rounded-pill">Ingresar</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
   </div>
+
+  <!-- Bootstrap JS (opcional) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 
