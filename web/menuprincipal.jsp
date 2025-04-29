@@ -14,16 +14,24 @@
 <head>
     <meta charset="UTF-8">
     <title>MENU PLAYA DE AUTO</title>
-    <link rel="shortcut icon" href="graficos/unidad.ico">
+    <link rel="shortcut icon" href="graficos/checklist.png">
     
     <!-- CSS -->
     <link rel="stylesheet" href="estetica/bootstrap.min.css">
     <link rel="stylesheet" href="estetica/menuresponsive.css">
+      <style>
+    body {
+      background: linear-gradient(to right, #cde9d4, #a0d1b4);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100vh;
+      display: flex;
+    }
+  </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <nav class="navbar">
+            <nav class="navbar" style="background-color: #0d7a34">
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
@@ -33,16 +41,15 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="menuprincipal.jsp">
-                            <img src="graficos/auto-splassh-unscreen.gif" width="100" height="50" alt="Logo" />
+                            <img src="graficos/formenu.png" width="80" alt="Logo" />
                         </a>
                     </div>
-
                     <div class="collapse navbar-collapse" id="menu">
                         <!-- REFERENCIALES -->
                         <ul class="navbar-nav">
                             <li class="dropdown">
                                 <a class="dropdown-toggle" href="#">
-                                    <span class="glyphicon glyphicon-credit-card"></span> REFERENCIALES <b class="caret"></b>
+                                    <!-- <span class="glyphicon glyphicon-credit-card"></span> --> REFERENCIALES <b class="caret"></b>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <% if ("1".equals(nivel)) { %>
@@ -58,7 +65,7 @@
                         <ul class="navbar-nav">
                             <li class="dropdown">
                                 <a class="dropdown-toggle" href="#">
-                                    <span class="glyphicon glyphicon-credit-card"></span> GESTION DE VENTAS <b class="caret"></b>
+                                   <!-- <span class="glyphicon glyphicon-credit-card"></span> --> GESTION DE VENTAS <b class="caret"></b>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <% if ("1".equals(nivel)) { %>
@@ -72,7 +79,7 @@
                         <ul class="navbar-nav">
                             <li class="dropdown">
                                 <a class="dropdown-toggle" href="#">
-                                    <span class="glyphicon glyphicon-credit-card"></span> LISTADOS <b class="caret"></b>
+                                   <!--  <span class="glyphicon glyphicon-credit-card"></span> --> LISTADOS <b class="caret"></b>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <% if ("1".equals(nivel)) { %>
@@ -89,7 +96,7 @@
                         <ul class="navbar-nav">
                             <li class="dropdown">
                                 <a class="dropdown-toggle" href="#">
-                                    <span class="glyphicon glyphicon-credit-card"></span> AYUDA <b class="caret"></b>
+                                  <!--  <span class="glyphicon glyphicon-credit-card"></span> --> AYUDA <b class="caret"></b>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a href="interactiva.chm" title="INTERACTIVA"><img src="graficos/Interactiva.png" width="20" height="20" /> Interactiva</a></li>
@@ -102,7 +109,7 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
                                 <a class="dropdown-toggle" href="#">
-                                    <span class="glyphicon glyphicon-user"></span> <%= usuariodelacceso %> <b class="caret"></b>
+                                     <%= usuariodelacceso %> <b class="caret"></b>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a href="gui_acceso.jsp"><img src="graficos/Salir.png" width="20" height="20" /> SALIR</a></li>

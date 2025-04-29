@@ -211,6 +211,7 @@ a:focus {
   .navbar > .container-fluid .navbar-brand {
     margin-left: -15px;
   }
+  
   .navbar-toggle {
     display: none;
   }
@@ -261,13 +262,15 @@ a:focus {
   display: block;
   opacity: 1;
 }
+<!-- BARRA DE NAVEGACION -->
 .navbar {
   position: relative;
   min-height: 50px;
   margin-top: 40px;
   margin-bottom: 20px;
-  background-color: #0e6e8c;
+  background-color: #198754;
 }
+
 .navbar-collapse {
   max-height: 340px;
   overflow-x: visible;
@@ -391,7 +394,7 @@ a:focus {
 .navbar .navbar-toggle:hover,
 .navbar .navbar-toggle:focus {
   background-color: #063847;
-  border-color: #063847;
+  border-color: #d58512;
 }
 .navbar .navbar-toggle .icon-bar {
   background-color: #fff;
