@@ -13,7 +13,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>MENU PLAYA DE AUTO</title>
+    <title>MENU PLAYA DE AUTOS</title>
     <link rel="shortcut icon" href="graficos/checklist.png">
     
     <!-- CSS -->
@@ -41,7 +41,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="menuprincipal.jsp">
-                            <img src="graficos/formenu.png" width="80" alt="Logo" />
+                            <img src="graficos/formenu.png" width="50" alt="Logo" />
                         </a>
                     </div>
                     <div class="collapse navbar-collapse" id="menu">
@@ -99,8 +99,8 @@
                                   <!--  <span class="glyphicon glyphicon-credit-card"></span> --> AYUDA <b class="caret"></b>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="interactiva.chm" title="INTERACTIVA"><img src="graficos/Interactiva.png" width="20" height="20" /> Interactiva</a></li>
-                                    <li><a href="manual.pdf" title="MANUAL"><img src="graficos/Manual.png" width="20" height="20" /> Manual</a></li>
+                                    <li><a href="Playa_auto-Interactiva.chm" title="INTERACTIVA"><img src="graficos/Interactiva.png" width="20" height="20" /> Interactiva</a></li>
+                                    <li><a href="Manual de Usuario-Playa_auto.pdf" title="MANUAL"><img src="graficos/Manual.png" width="20" height="20" /> Manual</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -114,7 +114,7 @@
                                 <ul class="dropdown-menu">
                                     <li><a href="gui_acceso.jsp"><img src="graficos/Salir.png" width="20" height="20" /> SALIR</a></li>
                                     <% if ("1".equals(nivel)) { %>
-                                    <li><a href="xxx.jsp"><img src="graficos/Crear_usuario.png" width="20" height="20" /> CREAR NUEVO USUARIO</a></li>
+                                    <li><a href="gui_signup.jsp"><img src="graficos/Crear_usuario.png" width="20" height="20" /> CREAR NUEVO USUARIO</a></li>
                                     <% } %>
                                 </ul>
                             </li>
