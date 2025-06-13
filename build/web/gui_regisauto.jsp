@@ -38,31 +38,35 @@
                             </div>
                         </div>
                         
-    
                         <div class="form-group">
                             <div class="col-md-3"></div>
-                            
                             <div class="col-md-2">
                                 <label class="control-label" for="marca">Marca</label> 
                             </div>
-                            
+
                             <div class="col-md-4">
-                                <select class="form-control" id="cboMarcas" disabled="">
-                                       <%
-                                           bdconexion cn = new bdconexion();
-                                           cn.crearConexion();
-                                           ResultSet tim = cn.consultar("select mar_id, mar_nom from marcas order by mar_id");
-                                           while (tim.next()) {
-                                       %>
-                                       <option value="<%= tim.getString("mar_id") %>"><%= tim.getString("mar_nom") %></option>
-                                       <%
-                                           }
-                                       %>
-                                 </select>
-                             </div>     
+                                <select class="form-control" id="cboMarcas">
+                                    <option value="0">Seleccione una marca</option>
+                                    <%
+                                        try {
+                                            bdconexion cn = new bdconexion();
+                                            cn.crearConexion();
+                                            ResultSet tim = cn.consultar("select mar_id, mar_nom from marcas order by mar_id");
+                                            while (tim.next()) {
+                                    %>
+                                            <option value="<%= tim.getString("mar_id") %>"><%= tim.getString("mar_nom") %></option>
+                                    <%
+                                            }
+                                        } catch (Exception e) {
+                                            out.println("<option>Error al cargar marcas</option>");
+                                            e.printStackTrace();
+                                        }
+                                    %>
+                                </select>
+                            </div>
                         </div>
+    
                         
-                                 
                         <div class="form-group">
                             <div class="col-md-3"></div>
                             <div class="col-md-2">
@@ -187,6 +191,7 @@
                                     <thead>
                                         <tr>
                                             <th class="warning">Código</th>
+                                            
                                             <th class="warning">Nombre Marca</th>
                                             <th class="warning">Modelo</th>
                                             <th class="warning">Estado</th>
@@ -208,6 +213,6 @@
         <script src="js/bootstrap.min.js"></script> 
         <script src="js/alertify.js"></script> 
         
-        <script src="sql_regisautos.js"></script>
+        <script src="sql_auto.js"></script>
     </body>
 </html>
