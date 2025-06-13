@@ -83,11 +83,11 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <% if ("1".equals(nivel)) { %>
-                                    <li><a href="listacliente.jsp"><img src="graficos/listar_cliente.png" width="20" height="20" /> LISTAR CLIENTES</a></li>
+                                    <li><a href="listar_clientes.jsp"><img src="graficos/listar_cliente.png" width="20" height="20" /> LISTAR CLIENTES</a></li>
                                     <% } %>
-                                    <li><a href="listavendedores.jsp"><img src="graficos/listar_vendedor.png" width="20" height="20" /> LISTAR VENDEDORES</a></li>
-                                    <li><a href="listaautos.jsp"><img src="graficos/listar_autos.png" width="20" height="20" /> LISTAR AUTOS</a></li>
-                                    <li><a href="listacontratos.jsp"><img src="graficos/listar_contrato.png" width="20" height="20" /> LISTAR CONTRATOS</a></li>
+                                    <li><a href="listar_vendedor.jsp"><img src="graficos/listar_vendedor.png" width="20" height="20" /> LISTAR VENDEDORES</a></li>
+                                    <li><a href="listar_autos.jsp"><img src="graficos/listar_autos.png" width="20" height="20" /> LISTAR AUTOS</a></li>
+                                    <li><a href="listar_contrato.jsp"><img src="graficos/listar_contrato.png" width="20" height="20" /> LISTAR CONTRATOS</a></li>
                                 </ul>
                             </li>
                         </ul>
