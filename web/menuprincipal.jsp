@@ -100,7 +100,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a href="Playa_auto-Interactiva.chm" title="INTERACTIVA"><img src="graficos/Interactiva.png" width="20" height="20" /> Interactiva</a></li>
-                                    <li><a href="Manual de Usuario-Playa_auto.pdf" title="MANUAL"><img src="graficos/Manual.png" width="20" height="20" /> Manual</a></li>
+                                    <li><a href="Manual de Usuario.pdf" title="MANUAL"><img src="graficos/Manual.png" width="20" height="20" /> Manual</a></li>
                                 </ul>
                             </li>
                         </ul>

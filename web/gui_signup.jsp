@@ -57,7 +57,7 @@ session="true" language="java" import="java.util.*" %>
           </div>
           
           <form action="sql_registro.jsp" method="post" id="formRegistro">
-            <!-- Mostrar mensajes de error o éxito -->
+            <!-- Mostrar mensajes de error o ?xito -->
             <div class="mb-3 text-center">
               <% if(request.getParameter("error") != null) { %>
                 <div class="alert alert-danger" role="alert">
@@ -83,17 +83,17 @@ session="true" language="java" import="java.util.*" %>
               <label for="login" class="form-label"><b>Usuario</b></label>
               <input type="text" class="form-control" id="login" name="login" 
                      placeholder="Ingrese nombre de usuario" maxlength="20" required>
-              <div class="form-text">Este será su nombre de usuario para ingresar al sistema</div>
+              <div class="form-text">Este ser? su nombre de usuario para ingresar al sistema</div>
             </div>
 
-            <!-- Contraseña -->
+            <!-- Contrase?a -->
             <div class="mb-3">
               <label for="password" class="form-label"><b>Contraseña</b></label>
               <input type="password" class="form-control" id="password" name="password" 
                      placeholder="Ingrese su contraseña" minlength="6" required>
             </div>
 
-            <!-- Confirmar contraseña -->
+            <!-- Confirmar contrase?a -->
             <div class="mb-3">
               <label for="confirmPassword" class="form-label"><b>Confirmar Contraseña</b></label>
               <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" 
@@ -128,7 +128,7 @@ session="true" language="java" import="java.util.*" %>
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   
-  <!-- Script para validar contraseñas -->
+  <!-- Script para validar contrase?as -->
   <script>
     document.getElementById('formRegistro').addEventListener('submit', function(e) {
       const password = document.getElementById('password').value;
@@ -136,18 +136,18 @@ session="true" language="java" import="java.util.*" %>
       
       if (password !== confirmPassword) {
         e.preventDefault();
-        alert('Las contraseñas no coinciden. Por favor, verifique.');
+        alert('Las contrase?as no coinciden. Por favor, verifique.');
         document.getElementById('confirmPassword').focus();
       }
     });
 
-    // Validación en tiempo real
+    // Validaci?n en tiempo real
     document.getElementById('confirmPassword').addEventListener('input', function() {
       const password = document.getElementById('password').value;
       const confirmPassword = this.value;
       
       if (password !== confirmPassword && confirmPassword.length > 0) {
-        this.setCustomValidity('Las contraseñas no coinciden');
+        this.setCustomValidity('Las contrase?as no coinciden');
         this.classList.add('is-invalid');
       } else {
         this.setCustomValidity('');

@@ -39,11 +39,10 @@ public class enviosqlBoot extends HttpServlet {
             }
             try {
                 cn.actualizar(request.getParameter("sql"));
+                out.println(request.getParameter("men"));
             } catch (SQLException ex) {
-                Logger.getLogger(enviosqlBoot.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            out.println(request.getParameter("men"));
-            
+                out.println("ERROR al ejecutar SQL: " + ex.getMessage());
+            }            
         }
     }
 

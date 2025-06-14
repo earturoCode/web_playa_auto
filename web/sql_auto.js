@@ -206,7 +206,15 @@ function grabar()
 
 function get_datos(filtro)
 {
-    var sql = "SELECT a.*, m.mar_nom FROM autos a INNER JOIN marcas m ON a.mar_id = m.mar_id WHERE a.aut_modelo LIKE '%" + filtro + "%' OR a.aut_placa LIKE '%" + filtro + "%' ORDER BY a.aut_modelo";
+          var sql = "SELECT a.*, m.mar_nom " +
+          "FROM autos a " +
+          "INNER JOIN marcas m ON a.mar_id = m.mar_id " +
+          "WHERE a.aut_modelo LIKE '%" + filtro + "%' " +
+          "OR a.aut_placa LIKE '%" + filtro + "%' " +
+          "OR m.mar_nom LIKE '%" + filtro + "%' " +
+          "OR a.aut_id LIKE '%" + filtro + "%' " +
+          "ORDER BY a.aut_modelo";
+
     $.post("extraer/get_autos", {sql: sql})
         .done(function (data) {
             $("#grilla tbody").html(data);
@@ -224,14 +232,14 @@ function seleccion(parent)
     // Asignar valores a los campos del formulario
     $("#txtcodigo").val($(celdas[0]).text().trim());
     $("#cboMarcas").val($(celdas[1]).text().trim());
-    $("#txtmodelo").val($(celdas[2]).text().trim());
-    $("#txtcolor").val($(celdas[3]).text().trim());
-    $("#txtversion").val($(celdas[4]).text().trim());
-    $("#txtmotor").val($(celdas[5]).text().trim());
-    $("#txtserie").val($(celdas[6]).text().trim());
-    $("#txtplaca").val($(celdas[7]).text().trim());
-    $("#txtkm").val($(celdas[8]).text().trim());
-    $("#txtestado").val($(celdas[9]).text().trim());
+    $("#txtmodelo").val($(celdas[3]).text().trim());
+    $("#txtcolor").val($(celdas[4]).text().trim());
+    $("#txtversion").val($(celdas[5]).text().trim());
+    $("#txtmotor").val($(celdas[6]).text().trim());
+    $("#txtserie").val($(celdas[7]).text().trim());
+    $("#txtplaca").val($(celdas[8]).text().trim());
+    $("#txtkm").val($(celdas[9]).text().trim());
+    $("#txtestado").val($(celdas[10]).text().trim());
     
 
 }

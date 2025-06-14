@@ -212,7 +212,6 @@
         <script src="js/jquery-1.12.2.min.js"></script> 
         <script src="js/bootstrap.min.js"></script> 
         <script src="js/alertify.js"></script> 
-        
         <script src="sql_auto.js"></script>
     </body>
 </html>

@@ -184,4 +184,19 @@ function seleccion(parent)
 $(function () 
 {
     get_datos("");
+    
+    $(function () {
+    // Ejecutar la función de carga inicial (sin filtro) al cargar la página
+    get_datos("");
+
+    // Evento para escuchar cuando se presiona una tecla en el campo de búsqueda
+    $('#txtbuscador').on('keypress', function (e) {
+        // Verificar si la tecla presionada es Enter (código 13)
+        if (e.which === 13) {
+            var filtro = $(this).val(); // Obtener el valor del campo de búsqueda
+            get_datos(filtro); // Llamar a la función get_datos con el filtro
+        }
+    });
+});
+
 });
