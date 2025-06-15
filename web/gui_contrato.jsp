@@ -45,17 +45,18 @@
                             </div>
                             <div class="col-md-4">
                                 <select class="form-control" id="cboUsuarios" disabled="">
-                                       <%
-                                           bdconexion cn = new bdconexion();
-                                           cn.crearConexion();
-                                           ResultSet usu = cn.consultar("select usu_id, usu_nombre from usuarios order by usu_nombre");
-                                           while (usu.next()) {
-                                       %>
-                                       <option value="<%= usu.getString("usu_id") %>"><%= usu.getString("usu_nombre") %></option>
-                                       <%
-                                           }
-                                       %>
-                                 </select>
+                                    <option value="">Seleccione usuario</option>
+                                    <%
+                                        bdconexion cn = new bdconexion();
+                                        cn.crearConexion();
+                                        ResultSet usu = cn.consultar("select usu_id, usu_nombre from usuarios order by usu_nombre");
+                                        while (usu.next()) {
+                                    %>
+                                    <option value="<%= usu.getString("usu_id") %>"><%= usu.getString("usu_nombre") %></option>
+                                    <%
+                                        }
+                                    %>
+                                </select>
                              </div>     
                         </div>
                         
@@ -65,16 +66,17 @@
                                 <label class="control-label" for="vendedor">Vendedor</label> 
                             </div>
                             <div class="col-md-4">
-                                <select class="form-control" id="cboVendedores" disabled="">
-                                       <%
-                                           ResultSet ven = cn.consultar("select ven_id, ven_nom from vendedor order by ven_nom");
-                                           while (ven.next()) {
-                                       %>
-                                       <option value="<%= ven.getString("ven_id") %>"><%= ven.getString("ven_nom") %></option>
-                                       <%
-                                           }
-                                       %>
-                                 </select>
+<select class="form-control" id="cboVendedores" disabled="">
+    <option value="">Seleccione vendedor</option>
+    <%
+        ResultSet ven = cn.consultar("select ven_id, ven_nom from vendedor order by ven_nom");
+        while (ven.next()) {
+    %>
+    <option value="<%= ven.getString("ven_id") %>"><%= ven.getString("ven_nom") %></option>
+    <%
+        }
+    %>
+</select>
                              </div>     
                         </div>
                         
@@ -84,16 +86,17 @@
                                 <label class="control-label" for="cliente">Cliente</label> 
                             </div>
                             <div class="col-md-4">
-                                <select class="form-control" id="cboClientes" disabled="">
-                                       <%
-                                           ResultSet cli = cn.consultar("select cli_id, cli_nom from cliente order by cli_nom");
-                                           while (cli.next()) {
-                                       %>
-                                       <option value="<%= cli.getString("cli_id") %>"><%= cli.getString("cli_nom") %></option>
-                                       <%
-                                           }
-                                       %>
-                                 </select>
+                            <select class="form-control" id="cboClientes" disabled="">
+                                <option value="">Seleccione cliente</option>
+                                <%
+                                    ResultSet cli = cn.consultar("select cli_id, cli_nom from cliente order by cli_nom");
+                                    while (cli.next()) {
+                                %>
+                                <option value="<%= cli.getString("cli_id") %>"><%= cli.getString("cli_nom") %></option>
+                                <%
+                                    }
+                                %>
+                            </select>
                              </div>     
                         </div>
                         
@@ -104,6 +107,7 @@
                             </div>
                             <div class="col-md-4">
                                 <select class="form-control" id="cboAutos" disabled="">
+                                    <option value="">Seleccione vehículo</option>
                                        <%
                                            ResultSet aut = cn.consultar("select a.aut_id, m.mar_nom, a.aut_modelo, a.aut_placa from autos a inner join marcas m on a.mar_id = m.mar_id order by m.mar_nom, a.aut_modelo");
                                            while (aut.next()) {
@@ -132,13 +136,14 @@
                                 <label class="control-label" for="metodo">Método de Pago</label> 
                             </div>
                             <div class="col-md-4">
-                                <select class="form-control" id="cboMetodo" disabled="">
-                                    <option value="Efectivo">Efectivo</option>
-                                    <option value="Transferencia">Transferencia</option>
-                                    <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
-                                    <option value="Cheque">Cheque</option>
-                                    <option value="Financiamiento">Financiamiento</option>
-                                 </select>
+<select class="form-control" id="cboMetodo" disabled="">
+    <option value="">Seleccione método</option>
+    <option value="Efectivo">Efectivo</option>
+    <option value="Transferencia">Transferencia</option>
+    <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
+    <option value="Cheque">Cheque</option>
+    <option value="Financiamiento">Financiamiento</option>
+</select>
                              </div>     
                         </div>
                         
@@ -167,6 +172,7 @@
                             </div>
                             <div class="col-md-4">
                                 <select class="form-control" id="cboTipoClausula" disabled="">
+                                        <option value="">Seleccione el tipo de clausula</option>
                                        <%
                                            ResultSet tip = cn.consultar("select tip_id, tip_descrip from tipo_condi order by tip_descrip");
                                            while (tip.next()) {
@@ -282,6 +288,7 @@
                         </div>
                         <input type="hidden" id="operacion"/>
                         <input type="hidden" id="clausulasArray" value="[]"/>
+                        <input type="hidden" id="clausulaEditandoIndice" value=""/>
                     </form>
                 </div>
             </div>

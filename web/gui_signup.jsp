@@ -57,7 +57,7 @@ session="true" language="java" import="java.util.*" %>
           </div>
           
           <form action="sql_registro.jsp" method="post" id="formRegistro">
-            <!-- Mostrar mensajes de error o ?xito -->
+            <!-- Mostrar mensajes de error o éxito -->
             <div class="mb-3 text-center">
               <% if(request.getParameter("error") != null) { %>
                 <div class="alert alert-danger" role="alert">
@@ -83,17 +83,17 @@ session="true" language="java" import="java.util.*" %>
               <label for="login" class="form-label"><b>Usuario</b></label>
               <input type="text" class="form-control" id="login" name="login" 
                      placeholder="Ingrese nombre de usuario" maxlength="20" required>
-              <div class="form-text">Este ser? su nombre de usuario para ingresar al sistema</div>
+              <div class="form-text">Este será su nombre de usuario para ingresar al sistema</div>
             </div>
 
-            <!-- Contrase?a -->
+            <!-- Contraseña -->
             <div class="mb-3">
               <label for="password" class="form-label"><b>Contraseña</b></label>
               <input type="password" class="form-control" id="password" name="password" 
                      placeholder="Ingrese su contraseña" minlength="6" required>
             </div>
 
-            <!-- Confirmar contrase?a -->
+            <!-- Confirmar contraseña -->
             <div class="mb-3">
               <label for="confirmPassword" class="form-label"><b>Confirmar Contraseña</b></label>
               <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" 
@@ -105,8 +105,8 @@ session="true" language="java" import="java.util.*" %>
               <label for="nivel" class="form-label"><b>Tipo de Usuario</b></label>
               <select class="form-select" id="nivel" name="nivel" required>
                 <option value="">Seleccione tipo de usuario</option>
-                <option value="1">Usuario Regular</option>
-                <option value="2">Administrador</option>
+                <option value="1">Administrador</option>
+                <option value="2">Usuario Regular</option>
               </select>
             </div>
 
@@ -115,7 +115,7 @@ session="true" language="java" import="java.util.*" %>
               <button type="submit" class="btn btn-success rounded-pill">
                 <i class="fas fa-user-plus"></i> Registrar Usuario
               </button>
-              <a href="index.jsp" class="btn btn-outline-secondary rounded-pill">
+              <a href="gui_acceso.jsp" class="btn btn-outline-secondary rounded-pill">
                 <i class="fas fa-arrow-left"></i> Volver al Login
               </a>
             </div>
@@ -128,7 +128,7 @@ session="true" language="java" import="java.util.*" %>
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   
-  <!-- Script para validar contrase?as -->
+  <!-- Script para validar contraseñas -->
   <script>
     document.getElementById('formRegistro').addEventListener('submit', function(e) {
       const password = document.getElementById('password').value;
@@ -136,18 +136,18 @@ session="true" language="java" import="java.util.*" %>
       
       if (password !== confirmPassword) {
         e.preventDefault();
-        alert('Las contrase?as no coinciden. Por favor, verifique.');
+        alert('Las contraseñas no coinciden. Por favor, verifique.');
         document.getElementById('confirmPassword').focus();
       }
     });
 
-    // Validaci?n en tiempo real
+    // Validación en tiempo real
     document.getElementById('confirmPassword').addEventListener('input', function() {
       const password = document.getElementById('password').value;
       const confirmPassword = this.value;
       
       if (password !== confirmPassword && confirmPassword.length > 0) {
-        this.setCustomValidity('Las contrase?as no coinciden');
+        this.setCustomValidity('Las contraseñas no coinciden');
         this.classList.add('is-invalid');
       } else {
         this.setCustomValidity('');
