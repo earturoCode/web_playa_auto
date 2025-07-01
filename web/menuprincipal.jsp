@@ -26,6 +26,38 @@
       height: 100vh;
       display: flex;
     }
+    
+    /* Estilos para el reloj */
+    .reloj-container {
+        color: white;
+        font-weight: bold;
+        font-size: 14px;
+        margin-right: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+    
+    .fecha-actual {
+        font-size: 11px;
+        opacity: 0.9;
+    }
+    
+    .hora-actual {
+        font-size: 16px;
+        font-family: 'Courier New', monospace;
+    }
+    
+    @media (max-width: 768px) {
+        .reloj-container {
+            font-size: 12px;
+            margin-right: 5px;
+        }
+        .hora-actual {
+            font-size: 14px;
+        }
+    }
   </style>
 </head>
 <body>
@@ -105,8 +137,17 @@
                             </li>
                         </ul>
 
-                        <!-- USUARIO Y SALIR -->
+                        <!-- RELOJ Y USUARIO -->
                         <ul class="nav navbar-nav navbar-right">
+                            <!-- Reloj en tiempo real -->
+                            <li class="navbar-text">
+                                <div class="reloj-container">
+                                    <div class="fecha-actual" id="fechaActual"></div>
+                                    <div class="hora-actual" id="horaActual"></div>
+                                </div>
+                            </li>
+                            
+                            <!-- Usuario -->
                             <li class="dropdown">
                                 <a class="dropdown-toggle" href="#">
                                      <%= usuariodelacceso %> <b class="caret"></b>
@@ -130,5 +171,40 @@
     <script src="js/jquery-1.12.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/menuresponsive.js"></script>
+    
+    <!-- Script para el reloj en tiempo real -->
+    <script>
+        function actualizarReloj() {
+            const ahora = new Date();
+            
+            // Formatear fecha
+            const opcionesFecha = { 
+                weekday: 'short', 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric' 
+            };
+            const fechaFormateada = ahora.toLocaleDateString('es-PY', opcionesFecha);
+            
+            // Formatear hora
+            const opcionesHora = { 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit',
+                hour12: false
+            };
+            const horaFormateada = ahora.toLocaleTimeString('es-PY', opcionesHora);
+            
+            // Actualizar elementos
+            document.getElementById('fechaActual').textContent = fechaFormateada;
+            document.getElementById('horaActual').textContent = horaFormateada;
+        }
+        
+        // Actualizar cada segundo
+        setInterval(actualizarReloj, 1000);
+        
+        // Ejecutar inmediatamente al cargar la página
+        actualizarReloj();
+    </script>
 </body>
 </html>
