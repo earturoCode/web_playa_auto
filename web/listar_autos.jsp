@@ -38,14 +38,14 @@
                 
                 <td>
                     <a href="menuprincipal.jsp">
-                        <input type="image" src="graficos/printer.png">
+                        <input type="image" src="graficos/backMenu.png">
                         Volver a Menu Principal
                     </a> 
                 </td>
 
                 <td>
                     <a href="imprimir_autos.jsp">
-                        <input type="image" src="graficos/printer.png">
+                        <input type="image" src="graficos/imprimir.png">
                         Imprimir Lista de Autos
                     </a> 
                 </td>

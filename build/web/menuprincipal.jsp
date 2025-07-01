@@ -156,6 +156,7 @@
                                     <li><a href="gui_acceso.jsp"><img src="graficos/Salir.png" width="20" height="20" /> SALIR</a></li>
                                     <% if ("1".equals(nivel)) { %>
                                     <li><a href="gui_signup.jsp"><img src="graficos/Crear_usuario.png" width="20" height="20" /> CREAR NUEVO USUARIO</a></li>
+                                    <li><a href="gui_reactivar_usuario.jsp"><img src="graficos/Crear_usuario.png" width="20" height="20" /> REACTIVAR USUARIOS</a></li>
                                     <% } %>
                                 </ul>
                             </li>
